@@ -18,19 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
   int currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
 
-  AnimatedContainer dotIndicator(index) {
-    return AnimatedContainer(
-      margin: EdgeInsets.only(right: 7),
-      duration: Duration(milliseconds: 400),
-      height: 8,
-      width: currentPage == index ? 20 : 8,
-      decoration: BoxDecoration(
-        color: currentPage == index ? backgroundBlue : secondaryBlue1,
-        shape: BoxShape.circle,
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,10 +61,27 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: List.generate(
-                          splashData.length,
-                          (index) => dotIndicator(index),
+                      Expanded(
+                        child: Container(
+                          height: 8,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: splashData.length,
+                            itemBuilder: (context, index) {
+                              return AnimatedContainer(
+                                duration: Duration(milliseconds: 400),
+                                margin: EdgeInsets.symmetric(horizontal: 2),
+                                width: currentPage == index ? 20 : 8,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: currentPage == index
+                                      ? backgroundBlue
+                                      : secondaryBlue1,
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                       ShortButton(

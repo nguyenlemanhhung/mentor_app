@@ -13,15 +13,17 @@ class HeaderProfile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          width: 112,
-          height: 112,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: NetworkImage(
-                  'https://cdn.pixabay.com/photo/2016/12/19/21/36/woman-1919143_960_720.jpg'),
-              fit: BoxFit.cover,
-            ),
+          width: 110,
+          height: 110,
+          child: Stack(
+            children: [
+              Image.asset('/images/border_avt.png'),
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(6),
+                child: Image.asset('/images/avt.png'),
+              ),
+            ],
           ),
         ),
         Column(

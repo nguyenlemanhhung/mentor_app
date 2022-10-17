@@ -14,56 +14,71 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Profile',
-          style: PrimaryFont.bold700(30, textWhite),
-        ),
-        HeaderProfile(),
-        Column(
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {
-                Navigator.pushNamed(context, EditProfilePage.routeName);
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Flexible(
+                flex: 1,
+                child: Text(
+                  'Profile',
+                  style: PrimaryFont.bold700(30, textWhite),
+                ),
+              ),
             ),
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {},
-            ),
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {},
-            ),
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {},
-            ),
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {},
-            ),
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {},
-            ),
-            MenuProfile(
-              text: 'Edit profile',
-              press: () {},
-            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Flexible(
+                flex: 9,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HeaderProfile(),
+                    Column(
+                      children: [
+                        MenuProfile(
+                          text: 'Chỉnh sửa hồ sơ',
+                          press: () {
+                            Navigator.pushNamed(
+                                context, EditProfilePage.routeName);
+                          },
+                        ),
+                        MenuProfile(
+                          text: 'Yêu thích',
+                          press: () {},
+                        ),
+                        MenuProfile(
+                          text: 'Tìm bạn bè',
+                          press: () {},
+                        ),
+                        MenuProfile(
+                          text: 'Lĩnh vực quan tâm',
+                          press: () {},
+                        ),
+                        MenuProfile(
+                          text: 'Đăng lý làm Mentor',
+                          press: () {},
+                        ),
+                      ],
+                    ),
+                    OutlineButtonCustom(
+                      text: 'Log Out',
+                      textColor: textRed,
+                      icon: Icons.logout,
+                      colorIcon: textRed,
+                      press: () {},
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
-        OutlineButtonCustom(
-          text: 'Log Out',
-          textColor: textRed,
-          icon: Icons.logout,
-          colorIcon: textRed,
-          press: () {},
-        ),
-      ],
+      ),
     );
   }
 }

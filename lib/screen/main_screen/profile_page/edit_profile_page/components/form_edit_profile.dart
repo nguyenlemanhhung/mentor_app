@@ -37,11 +37,6 @@ class _FormEditProfileState extends State<FormEditProfile> {
             style: PrimaryFont.regular400(14, textWhite),
             decoration: InputDecoration(
               labelText: 'Last Name',
-              // hintText: 'Nhập email của bạn',
-              // prefixIcon: Image(
-              //   image: AssetImage('/icons/auth/email.png'),
-              // ),
-              // suffixIcon: Icon(Icons.check_box_outlined),
             ),
           ),
           const SizedBox(
@@ -52,17 +47,16 @@ class _FormEditProfileState extends State<FormEditProfile> {
             style: PrimaryFont.regular400(14, textWhite),
             decoration: InputDecoration(
               labelText: 'Email',
-              // hintText: 'Nhập mật khẩu của bạn',
-              // prefixIcon: Image(
-              //   height: 1,
-              //   width: 1,
-              //   image: AssetImage(
-              //     '/icons/auth/lock.png',
-              //   ),
-              // ),
-              // suffixIcon: Image(
-              //   image: AssetImage('/icons/auth/password_off.png'),
-              // ),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.phone,
+            style: PrimaryFont.regular400(14, textWhite),
+            decoration: InputDecoration(
+              labelText: 'Phone Number',
             ),
           )
         ],

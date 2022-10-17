@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mentor_app/constants/colors.dart';
+import 'package:mentor_app/screen/main_screen/calendar_page/calendar_page.dart';
 import 'package:mentor_app/screen/main_screen/home_page/home_page.dart';
 import 'package:mentor_app/screen/main_screen/message_page/message_page.dart';
 import 'package:mentor_app/screen/main_screen/noti_page/noti_page.dart';
@@ -16,11 +17,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
 
   final pages = [
-    HomePage(),
     MessagePage(),
+    CalendarPage(),
+    HomePage(),
     NotiPage(),
     ProfilePage(),
   ];
@@ -29,17 +31,14 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: backgroundMainScreen,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: pages[_currentIndex],
-        ),
+        child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.amber,
         showUnselectedLabels: true,
         selectedFontSize: 15,
         unselectedFontSize: 15,
-        selectedItemColor: textWhite,
+        selectedItemColor: textBlue1,
         unselectedItemColor: textGrey1,
         onTap: (index) {
           setState(() {
@@ -47,16 +46,28 @@ class _MainScreenState extends State<MainScreen> {
           });
         },
         currentIndex: _currentIndex,
-        items: [
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'message',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month_outlined),
+            label: 'calendar',
+          ),
           BottomNavigationBarItem(
             activeIcon: Icon(Icons.home_work_outlined),
             icon: Icon(Icons.home),
             label: 'home',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'message'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'noti'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
+            icon: Icon(Icons.notifications),
+            label: 'noti',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'profile',
+          ),
         ],
       ),
     );

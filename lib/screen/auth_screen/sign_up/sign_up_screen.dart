@@ -1,10 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/form_sign_up.dart';
+import 'package:mentor_app/screen/auth_screen/auth_page_header.dart';
+
+import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/social_sign_up.dart';
+import 'package:mentor_app/screen/auth_screen/sign_up/sign_up_with_email.dart';
 
 import '../../../components/divider_with_text.dart';
 import '../../../components/full_width_button.dart';
-import '../../../components/social_auth.dart';
+
 import '../../../constants/colors.dart';
 import '../../../constants/font.dart';
 import '../sign_in/sign_in_screen.dart';
@@ -29,17 +32,38 @@ class SignUpScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
-                FormSignUp(),
+                Spacer(
+                  flex: 2,
+                ),
+                AuthPageHeader(),
+                Spacer(
+                  flex: 1,
+                ),
+                SocialSignUp(),
+                Spacer(
+                  flex: 1,
+                ),
+                DividerWithText(
+                  text: 'Or',
+                ),
+                Spacer(
+                  flex: 1,
+                ),
                 FullWidthButton(
-                  text: 'Sign Up',
-                  press: () {},
+                  text: 'Sign up with Email',
+                  press: () {
+                    Navigator.pushNamed(context, SignUpWithEmail.routeName);
+                  },
+                ),
+                Spacer(
+                  flex: 1,
                 ),
                 RichText(
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Already have account?',
-                        style: PrimaryFont.regular400(14, textGrey1),
+                        text: 'Already have account? ',
+                        style: PrimaryFont.regular400(14, textWhite),
                       ),
                       TextSpan(
                         recognizer: TapGestureRecognizer()
@@ -48,27 +72,13 @@ class SignUpScreen extends StatelessWidget {
                                 context, SignInScreen.routeName);
                           },
                         text: 'Sign In',
-                        style: PrimaryFont.regular400(14, textWhite),
+                        style: PrimaryFont.regular400(14, textBlue1),
                       ),
                     ],
                   ),
                 ),
-                DividerWithText(),
-                SocialAuth(),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text:
-                            'By Creating your account you have to agree with our ',
-                        style: PrimaryFont.regular400(12, textGrey1),
-                      ),
-                      TextSpan(
-                        text: 'Terms and Condition',
-                        style: PrimaryFont.regular400(12, textBlue1),
-                      ),
-                    ],
-                  ),
+                Spacer(
+                  flex: 3,
                 ),
               ],
             ),

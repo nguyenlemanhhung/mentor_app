@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
 
-class AppbarPage extends StatelessWidget {
-  const AppbarPage({
+class AppbarPageWithTitle extends StatelessWidget {
+  const AppbarPageWithTitle({
     Key? key,
     required this.text,
   }) : super(key: key);

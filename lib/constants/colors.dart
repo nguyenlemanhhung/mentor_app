@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const Color secondaryBlue1 = Color(0xFF424E7B);
 const Color secondaryBlue2 = Color(0xFF404D7D);
+const Color secondaryBlue3 = Color(0xFF3A4777);
 
 const Color backgroundMainScreen = Color(0xFF111D49);
 const Color backgroundAppbar = Color(0xFF233162);

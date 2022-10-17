@@ -3,8 +3,8 @@ import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
 
 class DividerWithText extends StatelessWidget {
-  const DividerWithText({Key? key}) : super(key: key);
-
+  const DividerWithText({Key? key, required this.text}) : super(key: key);
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +18,7 @@ class DividerWithText extends StatelessWidget {
           width: 15,
         ),
         Text(
-          'Or',
+          text,
           style: PrimaryFont.regular400(14, textWhite),
         ),
         const SizedBox(
