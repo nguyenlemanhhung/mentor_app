@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:mentor_app/components/appbar_page_no_title.dart';
 import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/components/opt_form.dart';
 
@@ -27,14 +28,9 @@ class VerificationScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: Image.asset('/icons/back_arrow.png'),
-                  ),
+                AppbarPageNoTitle(),
+                const SizedBox(
+                  height: 30,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,12 +42,12 @@ class VerificationScreen extends StatelessWidget {
                           'Verification',
                           style: PrimaryFont.bold700(30, textWhite),
                         ),
-                        const SizedBox(
-                          height: 15,
-                        ),
                         Text(
                           'We have sent code to your number\n+6287789909102',
-                          style: PrimaryFont.regular400(14, textSilver),
+                          style:
+                              PrimaryFont.regular400(14, textSilver).copyWith(
+                            height: 1.5,
+                          ),
                         ),
                       ],
                     ),

@@ -45,10 +45,13 @@ class _AllMentorPageState extends State<AllMentorPage> {
                             keyboardType: TextInputType.text,
                             style: PrimaryFont.regular400(14, textWhite),
                             decoration: InputDecoration(
-                              labelText: 'Search',
+                              // labelText: 'Search',
                               hintText: 'Bạn cần cố vấn như thế nào',
-                              prefixIcon: Image(
-                                image: AssetImage('/icons/search.png'),
+                              prefixIcon: InkWell(
+                                onTap: () {},
+                                child: Image(
+                                  image: AssetImage('/icons/search.png'),
+                                ),
                               ),
                               suffixIcon: InkWell(
                                 onTap: () {},

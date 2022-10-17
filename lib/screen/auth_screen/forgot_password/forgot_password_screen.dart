@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentor_app/components/appbar_page_no_title.dart';
 import 'package:mentor_app/components/full_width_button.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
@@ -27,14 +28,9 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: Image.asset('/icons/back_arrow.png'),
-                  ),
+                AppbarPageNoTitle(),
+                const SizedBox(
+                  height: 30,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,14 +39,16 @@ class ForgotPasswordScreen extends StatelessWidget {
                       'Forgot password',
                       style: PrimaryFont.bold700(30, textWhite),
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
                     Text(
                       'Please select option to send link reset password',
-                      style: PrimaryFont.regular400(14, textSilver),
+                      style: PrimaryFont.regular400(14, textSilver).copyWith(
+                        height: 1.5,
+                      ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 30,
                 ),
                 Column(
                   children: [
@@ -69,17 +67,23 @@ class ForgotPasswordScreen extends StatelessWidget {
                         ),
                   ],
                 ),
+                const SizedBox(
+                  height: 30,
+                ),
                 FullWidthButton(
                   text: 'Send link',
                   press: () {
                     Navigator.pushNamed(context, VerificationScreen.routeName);
                   },
                 ),
+                const SizedBox(
+                  height: 30,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Didn’t receive link?',
+                      'Didn’t receive link? ',
                       style: PrimaryFont.bold600(14, textWhite),
                     ),
                     GestureDetector(
