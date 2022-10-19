@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:mentor_app/components/appbar_page_no_title.dart';
 import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/components/opt_form.dart';
+import 'package:mentor_app/screen/auth_screen/forgot_password/forgot_password_screen.dart';
 
 import '../../../constants/colors.dart';
 
@@ -28,7 +29,12 @@ class VerificationScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppbarPageNoTitle(),
+                AppbarPageNoTitle(
+                  press: () {
+                    Navigator.pushNamed(
+                        context, ForgotPasswordScreen.routeName);
+                  },
+                ),
                 const SizedBox(
                   height: 30,
                 ),

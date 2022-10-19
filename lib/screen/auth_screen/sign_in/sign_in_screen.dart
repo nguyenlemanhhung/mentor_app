@@ -41,13 +41,13 @@ class SignInScreen extends StatelessWidget {
                   flex: 1,
                 ),
                 DividerWithText(
-                  text: 'Or',
+                  text: 'Hoặc',
                 ),
                 Spacer(
                   flex: 1,
                 ),
                 FullWidthButton(
-                  text: 'Sign in with Email',
+                  text: 'Đăng nhập bằng Email',
                   press: () {
                     Navigator.pushNamed(context, SignInWithEmail.routeName);
                   },
@@ -59,7 +59,7 @@ class SignInScreen extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Don’t have account? ',
+                        text: 'Bạn chưa có tài khoản? ',
                         style: PrimaryFont.regular400(14, textWhite),
                       ),
                       TextSpan(
@@ -68,7 +68,7 @@ class SignInScreen extends StatelessWidget {
                             Navigator.pushNamed(
                                 context, SignUpScreen.routeName);
                           },
-                        text: 'Sign Up',
+                        text: 'Đăng ký',
                         style: PrimaryFont.regular400(14, textBlue1),
                       ),
                     ],

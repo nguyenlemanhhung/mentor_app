@@ -8,6 +8,7 @@ import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/forgot_password_screen.dart';
 import 'package:mentor_app/screen/auth_screen/sign_in/components/form_sign_in.dart';
 import 'package:mentor_app/screen/auth_screen/sign_in/components/switch_auth.dart';
+import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_screen.dart';
 import 'package:mentor_app/screen/main_screen/main_screen.dart';
 
 class SignInWithEmail extends StatelessWidget {
@@ -33,7 +34,11 @@ class SignInWithEmail extends StatelessWidget {
               children: [
                 Flexible(
                   flex: 1,
-                  child: AppbarPageNoTitle(),
+                  child: AppbarPageNoTitle(
+                    press: () {
+                      Navigator.pushNamed(context, SignInScreen.routeName);
+                    },
+                  ),
                 ),
                 Flexible(
                   flex: 10,
@@ -47,11 +52,11 @@ class SignInWithEmail extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Sign in with Email',
+                            'Đăng nhập bằng Email',
                             style: PrimaryFont.bold700(30, textWhite),
                           ),
                           Text(
-                            'Input your account !',
+                            'Nhập tài khoản của bạn !',
                             style: PrimaryFont.regular400(14, textSilver)
                                 .copyWith(height: 2),
                           ),
@@ -73,7 +78,7 @@ class SignInWithEmail extends StatelessWidget {
                               Navigator.pushNamed(
                                   context, ForgotPasswordScreen.routeName);
                             },
-                            child: Text('Forgot Password ?',
+                            child: Text('Quên mật khẩu ?',
                                 style: PrimaryFont.medium500(14, textRed)),
                           ),
                         ],
@@ -82,7 +87,7 @@ class SignInWithEmail extends StatelessWidget {
                         height: 40,
                       ),
                       FullWidthButton(
-                        text: 'Sign in Now',
+                        text: 'Đăng nhập',
                         press: () {
                           Navigator.pushNamed(context, MainScreen.routeName);
                         },

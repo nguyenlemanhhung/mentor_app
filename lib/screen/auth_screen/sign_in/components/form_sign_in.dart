@@ -12,6 +12,7 @@ class FormSignIn extends StatefulWidget {
 }
 
 class _FormSignInState extends State<FormSignIn> {
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -26,7 +27,9 @@ class _FormSignInState extends State<FormSignIn> {
               prefixIcon: Image(
                 image: AssetImage('/icons/auth/email.png'),
               ),
-              suffixIcon: Icon(Icons.check_box_outlined),
+              // suffixIcon: Image(
+              //   image: AssetImage('/icons/auth/Checklist-on.png'),
+              // ),
             ),
           ),
           const SizedBox(
@@ -34,21 +37,30 @@ class _FormSignInState extends State<FormSignIn> {
           ),
           TextFormField(
             keyboardType: TextInputType.visiblePassword,
-            obscureText: true,
-            obscuringCharacter: '*',
+            obscureText: _obscureText,
+            // obscuringCharacter: '*',
             style: PrimaryFont.regular400(14, textWhite),
             decoration: InputDecoration(
               labelText: 'Mật khẩu',
               hintText: 'Nhập mật khẩu của bạn',
               prefixIcon: Image(
-                height: 1,
-                width: 1,
                 image: AssetImage(
                   '/icons/auth/lock.png',
                 ),
               ),
-              suffixIcon: Image(
-                image: AssetImage('/icons/auth/password_off.png'),
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _obscureText = !_obscureText;
+                  });
+                },
+                child: Image(
+                  image: AssetImage(
+                    _obscureText
+                        ? '/icons/auth/hide-on.png'
+                        : '/icons/auth/hide-off.png',
+                  ),
+                ),
               ),
             ),
           )

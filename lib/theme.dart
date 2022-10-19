@@ -47,5 +47,16 @@ InputDecorationTheme inputDecorationTheme() {
       borderSide: BorderSide(color: backgroundInput),
       gapPadding: 10,
     ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(color: textRed),
+      gapPadding: 10,
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(color: textRed),
+      gapPadding: 10,
+    ),
+    errorStyle: PrimaryFont.regular400(12, textGrey1).copyWith(height: 1.5),
   );
 }

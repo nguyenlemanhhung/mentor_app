@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/forgot_password_screen.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/verification_screen.dart';
 import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_with_email.dart';
+import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/success_screen.dart';
 import 'package:mentor_app/screen/auth_screen/sign_up/sign_up_with_email.dart';
 import 'package:mentor_app/screen/main_screen/all_mentor/all_mentor.dart';
 import 'package:mentor_app/screen/main_screen/details_mentor/details_mentor.dart';
@@ -24,6 +25,7 @@ final Map<String, WidgetBuilder> routes = {
   // Sign Up
   SignUpScreen.routeName: (context) => SignUpScreen(),
   SignUpWithEmail.routeName: (context) => SignUpWithEmail(),
+  SuccessScreen.routeName: (context) => SuccessScreen(),
   // Forgot Password
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
   VerificationScreen.routeName: (context) => VerificationScreen(),

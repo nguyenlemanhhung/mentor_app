@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mentor_app/components/full_width_button.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_screen.dart';
 import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/form_sign_up.dart';
-
+import 'package:mentor_app/screen/auth_screen/sign_up/sign_up_screen.dart';
 import '../../../components/appbar_page_no_title.dart';
 
 class SignUpWithEmail extends StatelessWidget {
@@ -31,7 +29,11 @@ class SignUpWithEmail extends StatelessWidget {
               children: [
                 Flexible(
                   flex: 1,
-                  child: AppbarPageNoTitle(),
+                  child: AppbarPageNoTitle(
+                    press: () {
+                      Navigator.pushNamed(context, SignUpScreen.routeName);
+                    },
+                  ),
                 ),
                 Flexible(
                   flex: 10,
@@ -45,11 +47,11 @@ class SignUpWithEmail extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Sign up with Email',
+                            'Đăng ký bằng Email',
                             style: PrimaryFont.bold700(30, textWhite),
                           ),
                           Text(
-                            'Input your account !',
+                            'Nhập tài khoản của bạn !',
                             style: PrimaryFont.regular400(14, textSilver)
                                 .copyWith(height: 2),
                           ),
@@ -59,33 +61,6 @@ class SignUpWithEmail extends StatelessWidget {
                         height: 40,
                       ),
                       FormSignUp(),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text:
-                                  'By Creating your account you have to agree with our ',
-                              style: PrimaryFont.regular400(12, textGrey1),
-                            ),
-                            TextSpan(
-                              text: 'Terms and Condition',
-                              style: PrimaryFont.regular400(12, textBlue1),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      FullWidthButton(
-                        text: 'Sign up Now',
-                        press: () {
-                          Navigator.pushNamed(context, SignInScreen.routeName);
-                        },
-                      ),
                     ],
                   ),
                 ),

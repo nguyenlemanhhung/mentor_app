@@ -40,7 +40,7 @@ class _SwitchAuthState extends State<SwitchAuth> {
           width: 10,
         ),
         Text(
-          'Save me',
+          'Ghi nhớ đăng nhập',
           style: PrimaryFont.regular400(14, textWhite),
         ),
       ],

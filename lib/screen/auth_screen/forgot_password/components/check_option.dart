@@ -47,7 +47,7 @@ class _CheckOptionSendLinkState extends State<CheckOptionSendLink> {
               //   width: 5,
               // ),
               Text(
-                'Send to your email',
+                'Gửi tới Email của bạn',
                 style: PrimaryFont.bold600(
                   16,
                   checkedValue ? textBlue1 : textWhite,
@@ -60,7 +60,7 @@ class _CheckOptionSendLinkState extends State<CheckOptionSendLink> {
               left: 45,
             ),
             child: Text(
-              'Link reset will be send to your email address registered',
+              'Hướng dẫn sẽ được gửi đến địa chỉ email mà bạn đã đăng ký',
               style: PrimaryFont.regular400(14, textGrey1),
             ),
           ),

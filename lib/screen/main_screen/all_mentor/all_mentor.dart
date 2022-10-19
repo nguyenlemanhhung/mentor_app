@@ -35,7 +35,11 @@ class _AllMentorPageState extends State<AllMentorPage> {
                   ),
                   child: Row(
                     children: [
-                      AppbarPageNoTitle(),
+                      AppbarPageNoTitle(
+                        press: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                       const SizedBox(
                         width: 20,
                       ),

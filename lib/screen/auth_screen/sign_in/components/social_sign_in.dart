@@ -10,7 +10,7 @@ class SocialSignIn extends StatelessWidget {
       children: [
         SocialContent(
           icon: '/icons/auth/apple.png',
-          text: 'Sign in with Apple',
+          text: 'Đăng nhập bằng Apple',
           press: () {},
         ),
         const SizedBox(
@@ -18,7 +18,7 @@ class SocialSignIn extends StatelessWidget {
         ),
         SocialContent(
           icon: '/icons/auth/google.png',
-          text: 'Sign in with Google',
+          text: 'Đăng nhập bằng Google',
           press: () {},
         ),
         const SizedBox(
@@ -26,7 +26,7 @@ class SocialSignIn extends StatelessWidget {
         ),
         SocialContent(
           icon: '/icons/auth/facebook.png',
-          text: 'Sign in with Facebook',
+          text: 'Đăng nhập bằng Facebook',
           press: () {},
         ),
       ],

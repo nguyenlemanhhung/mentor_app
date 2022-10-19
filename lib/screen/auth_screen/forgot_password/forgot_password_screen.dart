@@ -5,6 +5,7 @@ import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/components/check_option.dart';
 import 'package:mentor_app/screen/auth_screen/forgot_password/verification_screen.dart';
+import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_with_email.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -28,7 +29,11 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppbarPageNoTitle(),
+                AppbarPageNoTitle(
+                  press: () {
+                    Navigator.pushNamed(context, SignInWithEmail.routeName);
+                  },
+                ),
                 const SizedBox(
                   height: 30,
                 ),
@@ -36,11 +41,11 @@ class ForgotPasswordScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Forgot password',
+                      'Quên mật khẩu',
                       style: PrimaryFont.bold700(30, textWhite),
                     ),
                     Text(
-                      'Please select option to send link reset password',
+                      'Vui lòng chọn phương thức, chúng tôi sẽ gửi hướng dẫn đặt lại mật khẩu cho bạn',
                       style: PrimaryFont.regular400(14, textSilver).copyWith(
                         height: 1.5,
                       ),
@@ -71,7 +76,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   height: 30,
                 ),
                 FullWidthButton(
-                  text: 'Send link',
+                  text: 'Gửi link',
                   press: () {
                     Navigator.pushNamed(context, VerificationScreen.routeName);
                   },
@@ -83,13 +88,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Didn’t receive link? ',
+                      'Không nhận được hướng dẫn? ',
                       style: PrimaryFont.bold600(14, textWhite),
                     ),
                     GestureDetector(
                       onTap: () {},
                       child: Text(
-                        'Resend Link',
+                        'Gửi lại',
                         style: PrimaryFont.bold600(14, textBlue1),
                       ),
                     ),

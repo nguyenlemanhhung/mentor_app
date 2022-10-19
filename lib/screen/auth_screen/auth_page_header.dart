@@ -23,19 +23,20 @@ class AuthPageHeader extends StatelessWidget {
             ),
             children: [
               TextSpan(
-                text: 'By using our services you are agreeing to our\n',
+                text:
+                    'Khi sử dụng dịch vụ của chúng tôi,là bạn đã đồng ý với\n',
                 style: PrimaryFont.regular400(12, textSilver),
               ),
               TextSpan(
-                text: 'Terms ',
+                text: 'Điều khoản ',
                 style: PrimaryFont.regular400(12, textBlue1),
               ),
               TextSpan(
-                text: 'and ',
+                text: 'và ',
                 style: PrimaryFont.regular400(12, textSilver),
               ),
               TextSpan(
-                text: 'Privacy Policy',
+                text: 'Chính sách quyền riêng tư',
                 style: PrimaryFont.regular400(12, textBlue1),
               ),
             ],

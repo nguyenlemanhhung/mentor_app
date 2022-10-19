@@ -33,7 +33,11 @@ class DetailsMentor extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 children: [
-                  AppbarPageNoTitle(),
+                  AppbarPageNoTitle(
+                    press: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                   const SizedBox(
                     height: 30,
                   ),
