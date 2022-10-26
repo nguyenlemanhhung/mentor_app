@@ -10,7 +10,7 @@ class AppbarPageNoTitle extends StatelessWidget {
   final VoidCallback press;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: press,
       child: Container(
         alignment: Alignment.centerLeft,

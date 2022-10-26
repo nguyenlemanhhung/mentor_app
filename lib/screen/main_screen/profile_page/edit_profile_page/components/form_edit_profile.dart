@@ -21,22 +21,7 @@ class _FormEditProfileState extends State<FormEditProfile> {
             keyboardType: TextInputType.name,
             style: PrimaryFont.regular400(14, textWhite),
             decoration: InputDecoration(
-              labelText: 'First Name',
-              // hintText: 'Nhập email của bạn',
-              // prefixIcon: Image(
-              //   image: AssetImage('/icons/auth/email.png'),
-              // ),
-              // suffixIcon: Icon(Icons.check_box_outlined),
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          TextFormField(
-            keyboardType: TextInputType.name,
-            style: PrimaryFont.regular400(14, textWhite),
-            decoration: InputDecoration(
-              labelText: 'Last Name',
+              labelText: 'Họ và Tên',
             ),
           ),
           const SizedBox(
@@ -56,7 +41,7 @@ class _FormEditProfileState extends State<FormEditProfile> {
             keyboardType: TextInputType.phone,
             style: PrimaryFont.regular400(14, textWhite),
             decoration: InputDecoration(
-              labelText: 'Phone Number',
+              labelText: 'Số điện thoại',
             ),
           )
         ],

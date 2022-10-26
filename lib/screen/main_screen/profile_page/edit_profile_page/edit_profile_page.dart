@@ -4,8 +4,10 @@ import 'package:mentor_app/components/full_width_button.dart';
 import 'package:mentor_app/components/outline_button_custom.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
+import 'package:mentor_app/screen/main_screen/main_screen.dart';
 import 'package:mentor_app/screen/main_screen/profile_page/components/header_profile.dart';
 import 'package:mentor_app/screen/main_screen/profile_page/edit_profile_page/components/form_edit_profile.dart';
+import 'package:mentor_app/screen/main_screen/profile_page/edit_profile_page/components/tabbar_profile.dart';
 import 'package:mentor_app/screen/main_screen/profile_page/profile_page.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -20,61 +22,100 @@ class EditProfilePage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              Flexible(
-                flex: 1,
-                child: AppbarPageWithTitle(text: 'Edit Profile'),
+              AppbarPageWithTitle(
+                text: 'Hồ sơ cá nhân',
+                press: () {
+                  Navigator.pop(context);
+                },
               ),
-              Flexible(
-                flex: 10,
-                child: Column(
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: 110,
+                height: 110,
+                child: Stack(
                   children: [
-                    Spacer(
-                      flex: 1,
+                    Image.asset('/images/border_avt.png'),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(6),
+                      child: Image.asset('/images/avt.png'),
                     ),
-                    Column(
-                      children: [
-                        Container(
-                          width: 110,
-                          height: 110,
-                          child: Stack(
-                            children: [
-                              Image.asset('/images/border_avt.png'),
-                              Container(
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.all(6),
-                                child: Image.asset('/images/avt.png'),
-                              ),
-                            ],
+                    Positioned(
+                      bottom: 7,
+                      right: 7,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: backgroundBlue,
+                          ),
+                          child: Icon(
+                            Icons.camera_alt_outlined,
+                            color: Colors.white,
+                            size: 15,
                           ),
                         ),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        OutlineButtonCustom(
-                          text: 'Change Avatar',
-                          icon: Icons.camera_alt_outlined,
-                          colorIcon: backgroundBlue,
-                          press: () {},
-                          textColor: textBlue1,
-                        ),
-                      ],
-                    ),
-                    Spacer(
-                      flex: 2,
-                    ),
-                    FormEditProfile(),
-                    Spacer(
-                      flex: 2,
-                    ),
-                    FullWidthButton(
-                      text: 'Save changes',
-                      press: () {
-                        Navigator.pop(context);
-                      },
+                      ),
                     ),
                   ],
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                child: TabBarProfile(),
+              ),
+              // Column(
+              //   children: [
+              //     Container(
+              //       width: 110,
+              //       height: 110,
+              //       child: Stack(
+              //         children: [
+              //           Image.asset('/images/border_avt.png'),
+              //           Container(
+              //             alignment: Alignment.center,
+              //             padding: EdgeInsets.all(6),
+              //             child: Image.asset('/images/avt.png'),
+              //           ),
+              //           Positioned(
+              //             bottom: 7,
+              //             right: 7,
+              //             child: GestureDetector(
+              //               onTap: () {},
+              //               child: Container(
+              //                 height: 25,
+              //                 width: 25,
+              //                 decoration: BoxDecoration(
+              //                   shape: BoxShape.circle,
+              //                   color: backgroundBlue,
+              //                 ),
+              //                 child: Icon(
+              //                   Icons.camera_alt_outlined,
+              //                   color: Colors.white,
+              //                   size: 15,
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //     FormEditProfile(),
+              //     FullWidthButton(
+              //       text: 'Lưu thay đổi',
+              //       press: () {
+              //         Navigator.pushNamed(context, MainScreen.routeName);
+              //       },
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

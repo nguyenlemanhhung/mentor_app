@@ -24,11 +24,8 @@ class _TabBarCalendarState extends State<TabBarCalendar> {
             child: TabBar(
               isScrollable: true,
               labelPadding: EdgeInsets.all(10),
-              // indicatorPadding: EdgeInsets.only(top: 5),
-              // labelColor: mainOrange,
               labelStyle: PrimaryFont.regular400(14, textSilver),
               unselectedLabelColor: textGrey1,
-              // unselectedLabelColor: textBlack6,
               indicatorColor: textBlue1,
               tabs: [
                 Text('Chờ xác nhận'),
@@ -39,21 +36,64 @@ class _TabBarCalendarState extends State<TabBarCalendar> {
             ),
           ),
           Expanded(
-            child: TabBarView(
-              children: [
-                Center(
-                  child: Text('tab1'),
-                ),
-                Center(
-                  child: Text('tab2'),
-                ),
-                Center(
-                  child: Text('tab3'),
-                ),
-                Center(
-                  child: Text('tab4'),
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: TabBarView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png')
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png')
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png')
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png'),
+                          Image.asset('/images/sleep.png')
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

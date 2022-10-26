@@ -14,15 +14,17 @@ class CalendarPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Flexible(
-          flex: 1,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Text(
             'Lịch hẹn của tôi',
             style: PrimaryFont.bold700(30, textWhite),
           ),
         ),
-        Flexible(
-          flex: 9,
+        const SizedBox(
+          height: 30,
+        ),
+        Expanded(
           child: TabBarCalendar(),
         ),
       ],

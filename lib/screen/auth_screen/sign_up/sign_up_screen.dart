@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_app/screen/auth_screen/auth_page_header.dart';
 
-import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/social_sign_up.dart';
+import 'package:mentor_app/screen/auth_screen/sign_up/components/social_sign_up.dart';
 import 'package:mentor_app/screen/auth_screen/sign_up/sign_up_with_email.dart';
 
 import '../../../components/divider_with_text.dart';

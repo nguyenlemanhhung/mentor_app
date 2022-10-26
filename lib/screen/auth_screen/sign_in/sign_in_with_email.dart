@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mentor_app/components/appbar_page_no_title.dart';
-import 'package:mentor_app/components/full_width_button.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/screen/auth_screen/forgot_password/forgot_password_screen.dart';
 import 'package:mentor_app/screen/auth_screen/sign_in/components/form_sign_in.dart';
-import 'package:mentor_app/screen/auth_screen/sign_in/components/switch_auth.dart';
 import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_screen.dart';
-import 'package:mentor_app/screen/main_screen/main_screen.dart';
 
 class SignInWithEmail extends StatelessWidget {
   const SignInWithEmail({super.key});
@@ -66,32 +62,6 @@ class SignInWithEmail extends StatelessWidget {
                         height: 40,
                       ),
                       FormSignIn(),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SwitchAuth(),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, ForgotPasswordScreen.routeName);
-                            },
-                            child: Text('Quên mật khẩu ?',
-                                style: PrimaryFont.medium500(14, textRed)),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      FullWidthButton(
-                        text: 'Đăng nhập',
-                        press: () {
-                          Navigator.pushNamed(context, MainScreen.routeName);
-                        },
-                      ),
                     ],
                   ),
                 ),

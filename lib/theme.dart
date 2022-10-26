@@ -6,26 +6,16 @@ import 'constants/colors.dart';
 ThemeData theme() {
   return ThemeData(
     unselectedWidgetColor: backgroundSilver,
-
     fontFamily: 'SF Pro Display',
-    // scaffoldBackgroundColor: backgroundWhite,
     appBarTheme: const AppBarTheme(
-      // color: backgroundWhite,
       elevation: 0,
-      iconTheme: IconThemeData(
-          // color: secondaryGray5,
-          ),
+      iconTheme: IconThemeData(),
     ),
     inputDecorationTheme: inputDecorationTheme(),
   );
 }
 
 InputDecorationTheme inputDecorationTheme() {
-  // OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-  //   borderRadius: BorderRadius.circular(10),
-  //   borderSide: BorderSide(color: textBlue1),
-  //   gapPadding: 10,
-  // );
   return InputDecorationTheme(
     filled: true,
     fillColor: backgroundInput,

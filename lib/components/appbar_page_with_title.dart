@@ -6,17 +6,17 @@ class AppbarPageWithTitle extends StatelessWidget {
   const AppbarPageWithTitle({
     Key? key,
     required this.text,
+    required this.press,
   }) : super(key: key);
   final String text;
+  final VoidCallback press;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
+          onTap: press,
           child: Container(
             alignment: Alignment.centerLeft,
             child: Image.asset('/icons/back_arrow.png'),

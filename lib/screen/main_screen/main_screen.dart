@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mentor_app/constants/colors.dart';
+import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/screen/main_screen/calendar_page/calendar_page.dart';
 import 'package:mentor_app/screen/main_screen/home_page/home_page.dart';
-import 'package:mentor_app/screen/main_screen/message_page/message_page.dart';
+import 'package:mentor_app/screen/main_screen/news_page/news_page.dart';
 import 'package:mentor_app/screen/main_screen/noti_page/noti_page.dart';
 import 'package:mentor_app/screen/main_screen/profile_page/profile_page.dart';
 
@@ -20,8 +21,8 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 2;
 
   final pages = [
-    MessagePage(),
     CalendarPage(),
+    NewsPage(),
     HomePage(),
     NotiPage(),
     ProfilePage(),
@@ -34,39 +35,50 @@ class _MainScreenState extends State<MainScreen> {
         child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.amber,
-        showUnselectedLabels: true,
-        selectedFontSize: 15,
-        unselectedFontSize: 15,
-        selectedItemColor: textBlue1,
         unselectedItemColor: textGrey1,
-        onTap: (index) {
+        selectedItemColor: textWhite,
+        selectedIconTheme: IconThemeData(
+          color: textBlue1,
+        ),
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: backgroundAppbar,
+        selectedLabelStyle: PrimaryFont.regular400(11, textWhite),
+        unselectedLabelStyle: PrimaryFont.regular400(11, textGrey1),
+        currentIndex: _currentIndex,
+        onTap: (newIndex) {
           setState(() {
-            _currentIndex = index;
+            _currentIndex = newIndex;
           });
         },
-        currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'message',
+            label: 'Lịch hẹn',
+            icon: Icon(
+              Icons.calendar_month_outlined,
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month_outlined),
-            label: 'calendar',
+            label: 'Bảng tin',
+            icon: Icon(Icons.newspaper_outlined),
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home_work_outlined),
-            icon: Icon(Icons.home),
-            label: 'home',
+            label: 'Cố vấn',
+            icon: Icon(Icons.message_outlined),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'noti',
+            label: 'Thông báo',
+            icon: Icon(Icons.notifications_none_outlined),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'profile',
+            label: 'Cá nhân',
+            icon: Icon(
+              Icons.person_outline,
+              color: textGrey1,
+            ),
+            activeIcon: Icon(
+              Icons.person_outline,
+              color: textBlue1,
+            ),
           ),
         ],
       ),

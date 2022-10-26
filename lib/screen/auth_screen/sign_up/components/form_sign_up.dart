@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mentor_app/components/full_width_button.dart';
 
 import 'package:mentor_app/constants/colors.dart';
-import 'package:mentor_app/constants/email_validator.dart';
+import 'package:mentor_app/constants/errors_validator.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_screen.dart';
-import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_with_email.dart';
-import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/check_password_characters.dart';
-import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/success_screen.dart';
+import 'package:mentor_app/screen/auth_screen/sign_up/components/check_errors_auth.dart';
+import 'package:mentor_app/screen/auth_screen/sign_up/components/signup_success_screen.dart';
 
 class FormSignUp extends StatefulWidget {
   const FormSignUp({super.key});
@@ -17,8 +15,9 @@ class FormSignUp extends StatefulWidget {
 }
 
 class _FormSignUpState extends State<FormSignUp> {
-  TextEditingController password = TextEditingController();
-  TextEditingController confirmpassword = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   bool _obscureText = true;
@@ -28,43 +27,12 @@ class _FormSignUpState extends State<FormSignUp> {
   late String _password;
   late String _confirmpassword;
 
-  bool _isPasswordEightCharacters = false;
-  bool _hasPasswordOneNumber = false;
-  bool _hasSpecialCharacters = false;
-  bool _hasPasswordOneLowerCase = false;
-  bool _hasPasswordOneUpperCase = false;
-  bool _noPasswordSpaces = true;
-
-  final numbericRegex = RegExp(r'[0-9]');
-  final isLowerCaseRegex = RegExp(r'[a-z]');
-  final isUpperCaseRegex = RegExp(r'[A-Z]');
-  final hasSpecialCharactersRegex = RegExp(r'[!@#$%^&*(),.?":{}|<>]');
-  final noSpacesRegex = RegExp(r' ');
-
-  onPasswordChanged(String password) {
-    setState(() {
-      // check length PW
-      _isPasswordEightCharacters = false;
-      if (password.length >= 8) _isPasswordEightCharacters = true;
-
-      // // check character number PW
-      _hasPasswordOneNumber = false;
-      if (numbericRegex.hasMatch(password)) _hasPasswordOneNumber = true;
-
-      _hasPasswordOneLowerCase = false;
-      if (isLowerCaseRegex.hasMatch(password)) _hasPasswordOneLowerCase = true;
-
-      _hasPasswordOneUpperCase = false;
-      if (isUpperCaseRegex.hasMatch(password)) _hasPasswordOneUpperCase = true;
-
-      _hasSpecialCharacters = false;
-      if (hasSpecialCharactersRegex.hasMatch(password))
-        _hasSpecialCharacters = true;
-
-      _noPasswordSpaces = true;
-      if (noSpacesRegex.hasMatch(password)) _noPasswordSpaces = false;
-    });
-  }
+  bool has8Char = false;
+  bool hasDigits = false;
+  bool hasSpecialChar = false;
+  bool hasLowerCase = false;
+  bool hasUpperCase = false;
+  bool noSpaces = true;
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +51,14 @@ class _FormSignUpState extends State<FormSignUp> {
               }
               return null;
             },
+            onChanged: (value) {
+              final form = _formKey.currentState!;
+              form.validate();
+            },
             onSaved: (newValue) {
               _email = newValue!;
             },
+            controller: emailController,
             keyboardType: TextInputType.emailAddress,
             style: PrimaryFont.regular400(14, textWhite),
             decoration: InputDecoration(
@@ -100,19 +73,88 @@ class _FormSignUpState extends State<FormSignUp> {
             height: 30,
           ),
           TextFormField(
-            controller: password,
+            controller: passwordController,
             validator: (value) {
+              // if (!(value === null) && value!.isNotEmpty &&
+              //     value.length >= 8 &&
+              //     value.contains(hasDigitsReg) &&
+              //     value.contains(hasUpperCaseReg) &&
+              //     value.contains(hasLowerCaseReg) &&
+              //     value.contains(hasSpecialCharReg) &&
+              //     value.contains(noSpacesReg)) {
+              //   return 'dung';
+              // }
               if (value!.length >= 8) {
-                return "";
-              }
-              if (!RegExp(
+                return "pass phai co 8 chu";
+              } else if (!RegExp(
                       r'^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[!@#$&*~]).{8,}$')
                   .hasMatch(value)) {
-                return "";
+                return "pass phair du dk)";
               }
+
               return null;
             },
-            onChanged: (password) => onPasswordChanged(password),
+            onChanged: (value) {
+              if (value.characters.length >= 8) {
+                setState(() {
+                  has8Char = true;
+                });
+              } else {
+                setState(() {
+                  has8Char = false;
+                });
+              }
+
+              if (value.contains(hasUpperCaseReg)) {
+                setState(() {
+                  hasUpperCase = true;
+                });
+              } else {
+                setState(() {
+                  hasUpperCase = false;
+                });
+              }
+
+              if (value.contains(hasLowerCaseReg)) {
+                setState(() {
+                  hasLowerCase = true;
+                });
+              } else {
+                setState(() {
+                  hasLowerCase = false;
+                });
+              }
+
+              if (value.contains(hasDigitsReg)) {
+                setState(() {
+                  hasDigits = true;
+                });
+              } else {
+                setState(() {
+                  hasDigits = false;
+                });
+              }
+
+              if (value.contains(hasSpecialCharReg)) {
+                setState(() {
+                  hasSpecialChar = true;
+                });
+              } else {
+                setState(() {
+                  hasSpecialChar = false;
+                });
+              }
+
+              if (value.contains(noSpacesReg)) {
+                setState(() {
+                  noSpaces = false;
+                });
+              } else {
+                setState(() {
+                  noSpaces = true;
+                });
+              }
+            },
             onSaved: (newValue) {
               _password = newValue!;
             },
@@ -144,33 +186,18 @@ class _FormSignUpState extends State<FormSignUp> {
             ),
           ),
           const SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 25,
-            ),
-            child: CheckPasswordCharacters(
-              isPasswordEightCharacters: _isPasswordEightCharacters,
-              hasPasswordOneNumber: _hasPasswordOneNumber,
-              hasSpecialCharacters: _hasSpecialCharacters,
-              hasPasswordOneLowerCase: _hasPasswordOneLowerCase,
-              hasPasswordOneUpperCase: _hasPasswordOneUpperCase,
-              noPasswordSpaces: _noPasswordSpaces,
-            ),
-          ),
-          const SizedBox(
             height: 30,
           ),
           TextFormField(
-            controller: confirmpassword,
+            controller: confirmpasswordController,
             onSaved: (newValue) {
               _confirmpassword = newValue!;
             },
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Vui lòng nhập lại mật khẩu !';
-              } else if (password.text != confirmpassword.text) {
+              } else if (passwordController.text !=
+                  confirmpasswordController.text) {
                 return 'Mật khẩu không đúng !';
               }
               return null;
@@ -204,6 +231,29 @@ class _FormSignUpState extends State<FormSignUp> {
             ),
           ),
           const SizedBox(
+            height: 10,
+          ),
+          CheckErrorsAuth(
+            has8Char: has8Char,
+            hasDigits: hasDigits,
+            hasUpperCase: hasUpperCase,
+            hasLowerCase: hasLowerCase,
+            hasSpecialChar: hasSpecialChar,
+            noSpaces: noSpaces,
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          FullWidthButton(
+            text: 'Đăng ký',
+            press: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+                Navigator.pushNamed(context, SignUpSuccessScreen.routeName);
+              }
+            },
+          ),
+          const SizedBox(
             height: 40,
           ),
           RichText(
@@ -214,22 +264,23 @@ class _FormSignUpState extends State<FormSignUp> {
                   style: PrimaryFont.regular400(12, textGrey1),
                 ),
                 TextSpan(
-                  text: 'Điều khoản và Điều kiện của chúng tôi',
+                  text: 'Điều khoản',
                   style: PrimaryFont.regular400(12, textBlue1),
+                ),
+                TextSpan(
+                  text: ' và ',
+                  style: PrimaryFont.regular400(12, textGrey1),
+                ),
+                TextSpan(
+                  text: 'Điều kiện',
+                  style: PrimaryFont.regular400(12, textBlue1),
+                ),
+                TextSpan(
+                  text: ' của chúng tôi',
+                  style: PrimaryFont.regular400(12, textGrey1),
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          FullWidthButton(
-            text: 'Đăng ký',
-            press: () {
-              if (_formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, SuccessScreen.routeName);
-              }
-            },
           ),
         ],
       ),

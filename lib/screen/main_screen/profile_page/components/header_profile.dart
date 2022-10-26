@@ -10,7 +10,7 @@ class HeaderProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
           width: 110,
@@ -26,7 +26,11 @@ class HeaderProfile extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(
+          width: 30,
+        ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Nirmala Azalea',

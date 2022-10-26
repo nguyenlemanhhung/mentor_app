@@ -9,6 +9,7 @@ import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/model/mentor_data.dart';
 import 'package:mentor_app/screen/main_screen/details_mentor/details_mentor.dart';
+import 'package:mentor_app/screen/main_screen/main_screen.dart';
 
 class AllMentorPage extends StatefulWidget {
   const AllMentorPage({super.key});
@@ -37,7 +38,7 @@ class _AllMentorPageState extends State<AllMentorPage> {
                     children: [
                       AppbarPageNoTitle(
                         press: () {
-                          Navigator.pop(context);
+                          Navigator.pushNamed(context, MainScreen.routeName);
                         },
                       ),
                       const SizedBox(

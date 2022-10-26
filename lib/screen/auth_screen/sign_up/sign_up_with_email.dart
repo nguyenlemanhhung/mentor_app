@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/screen/auth_screen/sign_up/components.dart/form_sign_up.dart';
+import 'package:mentor_app/screen/auth_screen/sign_up/components/form_sign_up.dart';
 import 'package:mentor_app/screen/auth_screen/sign_up/sign_up_screen.dart';
 import '../../../components/appbar_page_no_title.dart';
 
