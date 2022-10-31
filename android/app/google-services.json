@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265177868930",
+    "project_id": "mentoring-wao",
+    "storage_bucket": "mentoring-wao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265177868930:android:46c4bd099ef6eedb11a29b",
+        "android_client_info": {
+          "package_name": "com.example.mentor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265177868930-kdrr3kag5vdkvjvk029r3065jbunnm1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATimVMOfwpiUQ2Um7vdE5QbJ77FSLDG_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265177868930-kdrr3kag5vdkvjvk029r3065jbunnm1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
