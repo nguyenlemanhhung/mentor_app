@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentor_app/components/appbar_page_with_title.dart';
+import 'package:mentor_app/components/divider_with_text.dart';
 import 'package:mentor_app/components/full_width_button.dart';
 import 'package:mentor_app/components/outline_button_custom.dart';
 import 'package:mentor_app/constants/colors.dart';
@@ -54,10 +55,96 @@ class EditProfilePage extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: backgroundBlue,
                           ),
-                          child: Icon(
-                            Icons.camera_alt_outlined,
-                            color: Colors.white,
-                            size: 15,
+                          child: InkWell(
+                            onTap: () {
+                              showModalBottomSheet<void>(
+                                elevation: 0,
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    color: backgroundMainScreen,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 50,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          InkWell(
+                                            onTap: () {},
+                                            child: Container(
+                                              padding: EdgeInsets.symmetric(
+                                                vertical: 15,
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    '/icons/photo-gallery.png',
+                                                    width: 25,
+                                                    height: 25,
+                                                    color: backgroundYellow,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    'Chọn ảnh từ Album',
+                                                    style:
+                                                        PrimaryFont.regular400(
+                                                      14,
+                                                      textSilver,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          DividerWithText(text: 'Or'),
+                                          InkWell(
+                                            onTap: () {},
+                                            child: Container(
+                                              padding: EdgeInsets.symmetric(
+                                                vertical: 15,
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    '/icons/photo-camera.png',
+                                                    width: 25,
+                                                    height: 25,
+                                                    color: backgroundYellow,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    'Chọn ảnh từ máy ảnh',
+                                                    style:
+                                                        PrimaryFont.regular400(
+                                                      14,
+                                                      textSilver,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            child: Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.white,
+                              size: 15,
+                            ),
                           ),
                         ),
                       ),
@@ -71,51 +158,6 @@ class EditProfilePage extends StatelessWidget {
               Expanded(
                 child: TabBarProfile(),
               ),
-              // Column(
-              //   children: [
-              //     Container(
-              //       width: 110,
-              //       height: 110,
-              //       child: Stack(
-              //         children: [
-              //           Image.asset('/images/border_avt.png'),
-              //           Container(
-              //             alignment: Alignment.center,
-              //             padding: EdgeInsets.all(6),
-              //             child: Image.asset('/images/avt.png'),
-              //           ),
-              //           Positioned(
-              //             bottom: 7,
-              //             right: 7,
-              //             child: GestureDetector(
-              //               onTap: () {},
-              //               child: Container(
-              //                 height: 25,
-              //                 width: 25,
-              //                 decoration: BoxDecoration(
-              //                   shape: BoxShape.circle,
-              //                   color: backgroundBlue,
-              //                 ),
-              //                 child: Icon(
-              //                   Icons.camera_alt_outlined,
-              //                   color: Colors.white,
-              //                   size: 15,
-              //                 ),
-              //               ),
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //     FormEditProfile(),
-              //     FullWidthButton(
-              //       text: 'Lưu thay đổi',
-              //       press: () {
-              //         Navigator.pushNamed(context, MainScreen.routeName);
-              //       },
-              //     ),
-              //   ],
-              // ),
             ],
           ),
         ),

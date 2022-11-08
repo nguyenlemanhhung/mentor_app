@@ -8,6 +8,7 @@ import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_with_email.dart';
 import 'package:mentor_app/screen/auth_screen/sign_up/components/signup_success_screen.dart';
 import 'package:mentor_app/screen/auth_screen/sign_up/sign_up_with_email.dart';
 import 'package:mentor_app/screen/main_screen/all_mentor/all_mentor.dart';
+import 'package:mentor_app/screen/main_screen/chat_screen/chat_screen.dart';
 import 'package:mentor_app/screen/main_screen/details_mentor/details_mentor.dart';
 import 'package:mentor_app/screen/main_screen/profile_page/change_password/change_password.dart';
 import 'package:mentor_app/screen/main_screen/profile_page/edit_profile_page/edit_profile_page.dart';
@@ -35,6 +36,7 @@ final Map<String, WidgetBuilder> routes = {
   VerificationScreen.routeName: (context) => VerificationScreen(),
   //home screen
   MainScreen.routeName: (context) => MainScreen(),
+  ChatScreen.routeName: (context) => ChatScreen(),
 
   EditProfilePage.routeName: (context) => EditProfilePage(),
   ChangePassword.routeName: (context) => ChangePassword(),

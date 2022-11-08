@@ -16,9 +16,23 @@ class FieldComponent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Lĩnh vực bạn quan tâm',
-            style: PrimaryFont.bold700(18, textWhite),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Lĩnh vực nổi bật',
+                style: PrimaryFont.bold700(18, textWhite),
+              ),
+              InkWell(
+                onTap: () {
+                  // Navigator.pushNamed(context, AllMentorPage.routeName);
+                },
+                child: Text(
+                  'Xem tất cả',
+                  style: PrimaryFont.bold600(14, textBlue1),
+                ),
+              ),
+            ],
           ),
           const SizedBox(
             height: 20,

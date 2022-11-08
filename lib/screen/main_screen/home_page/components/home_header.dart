@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentor_app/screen/main_screen/chat_screen/chat_screen.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/font.dart';
@@ -66,11 +67,28 @@ class HomeHeader extends StatelessWidget {
                 ),
               ],
             ),
-            InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, AllMentorPage.routeName);
-              },
-              child: Image.asset('/icons/search.png'),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, AllMentorPage.routeName);
+                  },
+                  child: Image.asset('/icons/search.png'),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, ChatScreen.routeName);
+                  },
+                  child: Image.asset(
+                    '/icons/chat.png',
+                    width: 25,
+                    color: textGrey1,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
