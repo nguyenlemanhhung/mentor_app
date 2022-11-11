@@ -18,7 +18,7 @@ class FullWidthButton extends StatelessWidget {
           // horizontal: 35,
           vertical: 15,
         ),
-        color: backgroundBlue,
+        color: bgBlue,
         child: Text(
           text,
           style: PrimaryFont.bold600(14, textWhite),

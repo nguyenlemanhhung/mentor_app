@@ -14,7 +14,12 @@ class AppbarPageNoTitle extends StatelessWidget {
       onTap: press,
       child: Container(
         alignment: Alignment.centerLeft,
-        child: Image.asset('/icons/back_arrow.png'),
+        child: Image.asset(
+          '/icons/back_arrow.png',
+          color: Theme.of(context).brightness == Brightness.dark
+              ? textWhite
+              : darkColor,
+        ),
       ),
     );
   }

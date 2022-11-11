@@ -60,8 +60,7 @@ class _SliderBannerState extends State<SliderBanner> {
                   return AnimatedContainer(
                     duration: Duration(milliseconds: 400),
                     margin: EdgeInsets.symmetric(horizontal: 2),
-                    color:
-                        currentPage == index ? backgroundBlue : secondaryBlue3,
+                    color: currentPage == index ? bgBlue : secondaryBlue3,
                     height: 2,
                     width: (size.width - 40) / sliderBannerData.length,
                   );

@@ -15,7 +15,7 @@ class ChangePassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundMainScreen,
+      backgroundColor: bgMainScreen,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25),

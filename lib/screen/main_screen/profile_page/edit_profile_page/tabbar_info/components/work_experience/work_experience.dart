@@ -16,7 +16,7 @@ class WorkExperience extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: backgroundInput,
+        color: bgInput,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

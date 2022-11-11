@@ -13,12 +13,15 @@ class SignInWithEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(),
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('/images/auth/bg_auth.png'),
+            image: AssetImage(Theme.of(context).brightness == Brightness.dark
+                ? '/images/background/bgAuthDark.png'
+                : '/images/background/bgAuthLight.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -49,12 +52,14 @@ class SignInWithEmail extends StatelessWidget {
                         children: [
                           Text(
                             'Đăng nhập bằng Email',
-                            style: PrimaryFont.bold700(30, textWhite),
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                          const SizedBox(
+                            height: 10,
                           ),
                           Text(
                             'Nhập tài khoản của bạn !',
-                            style: PrimaryFont.regular400(14, textSilver)
-                                .copyWith(height: 2),
+                            style: Theme.of(context).textTheme.caption,
                           ),
                         ],
                       ),

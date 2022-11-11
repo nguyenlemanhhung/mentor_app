@@ -16,7 +16,7 @@ class EditProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundMainScreen,
+      backgroundColor: bgMainScreen,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -52,7 +52,7 @@ class EditProfilePage extends StatelessWidget {
                           width: 25,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: backgroundBlue,
+                            color: bgBlue,
                           ),
                           child: Icon(
                             Icons.camera_alt_outlined,

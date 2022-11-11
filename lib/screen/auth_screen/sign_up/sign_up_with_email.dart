@@ -17,7 +17,9 @@ class SignUpWithEmail extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('/images/auth/bg_auth.png'),
+            image: AssetImage(Theme.of(context).brightness == Brightness.dark
+                ? '/images/background/bgAuthDark.png'
+                : '/images/background/bgAuthLight.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -48,12 +50,14 @@ class SignUpWithEmail extends StatelessWidget {
                         children: [
                           Text(
                             'Đăng ký bằng Email',
-                            style: PrimaryFont.bold700(30, textWhite),
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                          const SizedBox(
+                            height: 10,
                           ),
                           Text(
                             'Nhập tài khoản của bạn !',
-                            style: PrimaryFont.regular400(14, textSilver)
-                                .copyWith(height: 2),
+                            style: Theme.of(context).textTheme.caption,
                           ),
                         ],
                       ),

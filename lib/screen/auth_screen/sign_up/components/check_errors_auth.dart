@@ -72,7 +72,7 @@ class CheckErrorContent extends StatelessWidget {
           child: Center(
             child: Icon(
               errorCheck ? Icons.check : Icons.error_outline,
-              color: errorCheck ? backgroundYellow : textRed,
+              color: errorCheck ? bgYellow : textRed,
               size: 15,
             ),
           ),

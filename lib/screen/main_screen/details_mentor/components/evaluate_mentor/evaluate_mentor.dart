@@ -24,7 +24,7 @@ class EvaluateMentor extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.star,
-                            color: backgroundYellow,
+                            color: bgYellow,
                           ),
                           Text(
                             '4,6',

@@ -18,7 +18,7 @@ class EvaluateItem extends StatelessWidget {
         vertical: 7,
       ),
       decoration: BoxDecoration(
-        color: backgroundInput,
+        color: bgInput,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -30,7 +30,7 @@ class EvaluateItem extends StatelessWidget {
               Icon(
                 Icons.star,
                 size: 15,
-                color: backgroundYellow,
+                color: bgYellow,
               ),
               const SizedBox(
                 width: 5,

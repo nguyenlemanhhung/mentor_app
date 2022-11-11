@@ -65,7 +65,7 @@ class _TabsDetailMentorState extends State<TabsDetailMentor> {
                           border: Border(
                             bottom: BorderSide(
                               color: current == index
-                                  ? backgroundBlue
+                                  ? bgBlue
                                   : Colors.transparent,
                             ),
                           ),

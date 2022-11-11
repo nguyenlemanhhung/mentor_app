@@ -51,9 +51,7 @@ class SuccessScreenContent extends StatelessWidget {
               ),
               Text(
                 title,
-                style: PrimaryFont.bold700(24, textWhite).copyWith(
-                  height: 1.5,
-                ),
+                style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(

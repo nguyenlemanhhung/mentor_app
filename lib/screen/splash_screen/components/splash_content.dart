@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -29,12 +31,12 @@ class SplashContent extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: PrimaryFont.bold700(30, textWhite),
+                  style: Theme.of(context).textTheme.headline2,
                   textAlign: TextAlign.center,
                 ),
                 Text(
                   subTitle,
-                  style: PrimaryFont.regular400(14, textGrey1),
+                  style: Theme.of(context).textTheme.caption,
                   textAlign: TextAlign.center,
                 ),
               ],

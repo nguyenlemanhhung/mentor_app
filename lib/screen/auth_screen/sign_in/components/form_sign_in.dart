@@ -86,7 +86,7 @@ class _FormSignInState extends State<FormSignIn> {
         Row(
           children: [
             FlutterSwitch(
-              activeColor: backgroundBlue,
+              activeColor: bgBlue,
               width: 40.0,
               height: 22.0,
               toggleSize: 20.0,
@@ -103,7 +103,7 @@ class _FormSignInState extends State<FormSignIn> {
             ),
             Text(
               'Ghi nhớ đăng nhập',
-              style: PrimaryFont.regular400(14, textWhite),
+              style: Theme.of(context).textTheme.caption,
             ),
           ],
         ),
@@ -146,7 +146,7 @@ class _FormSignInState extends State<FormSignIn> {
       keyboardType: TextInputType.visiblePassword,
       obscureText: _obscureText,
       // obscuringCharacter: '*',
-      style: PrimaryFont.regular400(14, textWhite),
+      style: Theme.of(context).textTheme.caption,
       decoration: InputDecoration(
         labelText: 'Mật khẩu',
         hintText: 'Nhập mật khẩu của bạn',
@@ -197,7 +197,7 @@ class _FormSignInState extends State<FormSignIn> {
         return null;
       },
       keyboardType: TextInputType.emailAddress,
-      style: PrimaryFont.regular400(14, textWhite),
+      style: Theme.of(context).textTheme.caption,
       decoration: InputDecoration(
         labelText: 'Email',
         hintText: 'Nhập email của bạn',

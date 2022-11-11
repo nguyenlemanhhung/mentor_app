@@ -15,7 +15,7 @@ class MentorCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: backgroundInput,
+        color: bgInput,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
@@ -46,7 +46,7 @@ class MentorCard extends StatelessWidget {
                             Icon(
                               Icons.person_add_alt_outlined,
                               size: 15,
-                              color: backgroundBlue,
+                              color: bgBlue,
                             ),
                             const SizedBox(
                               height: 5,
@@ -72,7 +72,7 @@ class MentorCard extends StatelessWidget {
                             Icon(
                               Icons.message_outlined,
                               size: 15,
-                              color: backgroundYellow,
+                              color: bgYellow,
                             ),
                             const SizedBox(
                               height: 5,
@@ -142,7 +142,7 @@ class MentorCard extends StatelessWidget {
                               Icon(
                                 Icons.calendar_month,
                                 size: 15,
-                                color: backgroundBlue,
+                                color: bgBlue,
                               ),
                               const SizedBox(
                                 width: 5,

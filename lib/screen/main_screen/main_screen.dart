@@ -30,18 +30,17 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundMainScreen,
       body: SafeArea(
         child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: textGrey1,
-        selectedItemColor: textWhite,
+        // unselectedItemColor: textGrey1,
+        // selectedItemColor: textWhite,
         selectedIconTheme: IconThemeData(
           color: textBlue1,
         ),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: backgroundAppbar,
+        // backgroundColor: bgAppbar,
         selectedLabelStyle: PrimaryFont.regular400(11, textWhite),
         unselectedLabelStyle: PrimaryFont.regular400(11, textGrey1),
         currentIndex: _currentIndex,

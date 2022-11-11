@@ -20,7 +20,9 @@ class SignInScreen extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('/images/auth/bg_auth.png'),
+            image: AssetImage(Theme.of(context).brightness == Brightness.dark
+                ? '/images/background/bgAuthDark.png'
+                : '/images/background/bgAuthLight.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -60,7 +62,7 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'Bạn chưa có tài khoản? ',
-                        style: PrimaryFont.regular400(14, textWhite),
+                        style: Theme.of(context).textTheme.caption,
                       ),
                       TextSpan(
                         recognizer: TapGestureRecognizer()
@@ -69,7 +71,10 @@ class SignInScreen extends StatelessWidget {
                                 context, SignUpScreen.routeName);
                           },
                         text: 'Đăng ký',
-                        style: PrimaryFont.regular400(14, textBlue1),
+                        style: Theme.of(context).textTheme.caption?.apply(
+                              color: textBlue1,
+                              fontWeightDelta: 600,
+                            ),
                       ),
                     ],
                   ),

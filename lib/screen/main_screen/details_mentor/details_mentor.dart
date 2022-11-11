@@ -53,14 +53,14 @@ class DetailsMentor extends StatelessWidget {
                         icon: Icons.calendar_month,
                         text: 'Đặt lịch',
                         color: textWhite,
-                        backgroundColor: backgroundBlue,
+                        backgroundColor: bgBlue,
                       ),
                       ButtonWithIcon(
                         press: () {},
                         icon: Icons.add_box_outlined,
                         text: 'Theo dõi',
                         color: textSilver,
-                        backgroundColor: backgroundInput,
+                        backgroundColor: bgInput,
                       ),
                       IconButtonOutline(
                         press: () {},

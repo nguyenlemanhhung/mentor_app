@@ -34,7 +34,7 @@ class EvaluateContent extends StatelessWidget {
                 ),
                 Icon(
                   Icons.star,
-                  color: backgroundYellow,
+                  color: bgYellow,
                 ),
               ],
             ),

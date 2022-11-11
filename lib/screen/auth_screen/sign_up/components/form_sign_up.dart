@@ -60,7 +60,7 @@ class _FormSignUpState extends State<FormSignUp> {
             },
             controller: emailController,
             keyboardType: TextInputType.emailAddress,
-            style: PrimaryFont.regular400(14, textWhite),
+            style: Theme.of(context).textTheme.caption,
             decoration: InputDecoration(
               labelText: 'Email',
               hintText: 'Nhập email của bạn',
@@ -160,7 +160,7 @@ class _FormSignUpState extends State<FormSignUp> {
             },
             keyboardType: TextInputType.visiblePassword,
             obscureText: _obscureText,
-            style: PrimaryFont.regular400(14, textWhite),
+            style: Theme.of(context).textTheme.caption,
             decoration: InputDecoration(
               labelText: 'Mật khẩu',
               hintText: 'Nhập mật khẩu của bạn',
@@ -205,7 +205,7 @@ class _FormSignUpState extends State<FormSignUp> {
             keyboardType: TextInputType.visiblePassword,
             obscureText: _obscureTextConfirm,
             // obscuringCharacter: '*',
-            style: PrimaryFont.regular400(14, textWhite),
+            style: Theme.of(context).textTheme.caption,
             decoration: InputDecoration(
               labelText: 'Xác nhận mật khẩu',
               hintText: 'Xác nhận mật khẩu của bạn',

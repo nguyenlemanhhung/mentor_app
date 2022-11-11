@@ -9,7 +9,9 @@ class SocialSignIn extends StatelessWidget {
     return Column(
       children: [
         SocialContent(
-          icon: '/icons/auth/apple.png',
+          icon: Theme.of(context).brightness == Brightness.dark
+              ? '/icons/auth/apple_dark.png'
+              : '/icons/auth/apple_light.png',
           text: 'Đăng nhập bằng Apple',
           press: () {},
         ),

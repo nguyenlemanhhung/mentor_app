@@ -94,7 +94,7 @@ class ProfilePage extends StatelessWidget {
                           barrierColor: secondaryGrey.withOpacity(0.64),
                           context: context,
                           builder: (_) => AlertDialog(
-                            backgroundColor: backgroundMainScreen,
+                            backgroundColor: bgMainScreen,
                             contentPadding: EdgeInsets.all(0),
                             content: Column(
                               mainAxisSize: MainAxisSize.min,

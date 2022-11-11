@@ -15,11 +15,16 @@ class AppbarPageWithTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        GestureDetector(
+        InkWell(
           onTap: press,
           child: Container(
             alignment: Alignment.centerLeft,
-            child: Image.asset('/icons/back_arrow.png'),
+            child: Image.asset(
+              '/icons/back_arrow.png',
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? textWhite
+                  : darkColor,
+            ),
           ),
         ),
         Text(

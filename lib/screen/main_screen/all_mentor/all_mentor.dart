@@ -22,7 +22,7 @@ class _AllMentorPageState extends State<AllMentorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundMainScreen,
+      backgroundColor: bgMainScreen,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(

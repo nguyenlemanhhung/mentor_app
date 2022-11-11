@@ -20,7 +20,7 @@ class _CheckOptionSendLinkState extends State<CheckOptionSendLink> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: backgroundInput,
+        color: bgInput,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: checkedValue ? textBlue1 : Colors.transparent,
@@ -35,7 +35,7 @@ class _CheckOptionSendLinkState extends State<CheckOptionSendLink> {
                 // fillColor: MaterialStateProperty.resolveWith((states) => null),
                 shape: CircleBorder(),
                 // fillColor: MaterialStateProperty.,
-                activeColor: backgroundYellow,
+                activeColor: bgYellow,
                 value: checkedValue,
                 onChanged: ((value) {
                   setState(() {

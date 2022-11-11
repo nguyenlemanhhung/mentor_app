@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mentor_app/constants/colors.dart';
-import 'package:mentor_app/constants/font.dart';
 
 class SocialContent extends StatelessWidget {
   const SocialContent({
@@ -33,7 +32,7 @@ class SocialContent extends StatelessWidget {
             ),
             Text(
               text,
-              style: PrimaryFont.bold600(14, textWhite),
+              style: Theme.of(context).textTheme.headline5,
             ),
           ],
         ),

@@ -37,7 +37,7 @@ class FieldComponent extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: backgroundInput,
+                      color: bgInput,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Column(

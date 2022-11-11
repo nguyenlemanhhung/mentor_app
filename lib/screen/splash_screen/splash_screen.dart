@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mentor_app/components/short_button.dart';
 import 'package:mentor_app/constants/colors.dart';
-import 'package:mentor_app/model/splash_data.dart';
+import 'package:mentor_app/models/splash_data.dart';
 import 'package:mentor_app/screen/auth_screen/sign_in/sign_in_screen.dart';
-
 import 'components/splash_content.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,7 +24,11 @@ class _SplashScreenState extends State<SplashScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('/images/splash/bg-splash-2.png'),
+            image: AssetImage(
+              Theme.of(context).brightness == Brightness.dark
+                  ? '/images/background/bgWalktroughDark.png'
+                  : '/images/background/bgWalktroughLight.png',
+            ),
             fit: BoxFit.cover,
           ),
         ),
@@ -76,19 +78,19 @@ class _SplashScreenState extends State<SplashScreen> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: currentPage == index
-                                      ? backgroundBlue
-                                      : secondaryBlue1,
+                                      ? bgBlue
+                                      : Theme.of(context).brightness ==
+                                              Brightness.dark
+                                          ? secondaryBlue1
+                                          : textGrey2,
                                 ),
                               );
                             },
                           ),
                         ),
                       ),
-                      ShortButton(
-                        text: currentPage == splashData.length - 1
-                            ? 'Get Start'
-                            : 'Next',
-                        press: () {
+                      MaterialButton(
+                        onPressed: () {
                           currentPage == splashData.length - 1
                               ? Navigator.pushNamed(
                                   context, SignInScreen.routeName)
@@ -99,6 +101,21 @@ class _SplashScreenState extends State<SplashScreen> {
                                   curve: Curves.easeInOut,
                                 );
                         },
+                        elevation: 0,
+                        color: bgBlue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          currentPage == splashData.length - 1
+                              ? 'Get Start'
+                              : 'Next',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: textWhite,
+                          ),
+                        ),
                       ),
                     ],
                   ),
