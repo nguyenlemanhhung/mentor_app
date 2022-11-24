@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-const bgLightTheme = Color(0xFFFFFFFF);
-const bgDarkTheme = Color(0xFF111D49);
-const darkColor = Color(0xFF242B42);
+const Color bgLightTheme = Color(0xFFFFFFFF);
+const Color bgDarkTheme = Color(0xFF111D49);
+const Color darkColor = Color(0xFF242B42);
 
 const Color secondaryGrey = Color(0xFF686F86);
 const Color secondaryGrey2 = Color(0xFFCDD0D7);

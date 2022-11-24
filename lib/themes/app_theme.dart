@@ -35,8 +35,6 @@ abstract class AppTheme {
           backgroundColor: bgBottomNavigationBar,
           unselectedItemColor: textGrey1,
           selectedItemColor: textWhite,
-          selectedLabelStyle: PrimaryFont.regular400(11, textWhite),
-          unselectedLabelStyle: PrimaryFont.regular400(11, textGrey1),
         ),
         fontFamily: 'SF Pro Display',
         brightness: Brightness.dark,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/model/field_data.dart';
+import 'package:mentor_app/models/field_data.dart';
 
 class FieldComponent extends StatelessWidget {
   const FieldComponent({

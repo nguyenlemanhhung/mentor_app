@@ -7,7 +7,7 @@ import 'package:mentor_app/components/divider_with_text.dart';
 import 'package:mentor_app/components/mentor_card.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/model/mentor_data.dart';
+import 'package:mentor_app/models/mentor_data.dart';
 import 'package:mentor_app/screen/main_screen/details_mentor/details_mentor.dart';
 import 'package:mentor_app/screen/main_screen/main_screen.dart';
 

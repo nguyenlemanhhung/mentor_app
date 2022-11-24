@@ -5,7 +5,7 @@ import 'package:mentor_app/constants/font.dart';
 import 'package:mentor_app/screen/main_screen/all_mentor/all_mentor.dart';
 
 import '../../../../components/mentor_card.dart';
-import '../../../../model/mentor_data.dart';
+import '../../../../models/mentor_data.dart';
 import '../../details_mentor/details_mentor.dart';
 
 class MentorComponent extends StatelessWidget {

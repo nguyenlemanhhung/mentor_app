@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/model/slider_banner_home.dart';
+import 'package:mentor_app/models/slider_banner_home.dart';
 import 'package:mentor_app/screen/main_screen/home_page/components/slider_content.dart';
 
 class SliderBanner extends StatefulWidget {

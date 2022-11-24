@@ -8,11 +8,11 @@ TextTheme textLightTheme() {
       fontSize: 30,
       color: darkColor,
     ),
-    // headline3: TextStyle(
-    //   fontWeight: FontWeight.w700,
-    //   fontSize: 24,
-    //   color: darkColor,
-    // ),
+    headline3: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 24,
+      color: darkColor,
+    ),
     headline5: TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14,
@@ -51,6 +51,11 @@ TextTheme textDarkTheme() {
     headline2: TextStyle(
       fontWeight: FontWeight.w700,
       fontSize: 30,
+      color: textWhite,
+    ),
+    headline3: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 24,
       color: textWhite,
     ),
     headline5: TextStyle(

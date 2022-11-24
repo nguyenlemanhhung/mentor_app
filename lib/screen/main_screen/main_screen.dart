@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:mentor_app/constants/colors.dart';
-import 'package:mentor_app/constants/font.dart';
+
 import 'package:mentor_app/screen/main_screen/calendar_page/calendar_page.dart';
+import 'package:mentor_app/screen/main_screen/chat_screen/chat_screen.dart';
 import 'package:mentor_app/screen/main_screen/home_page/home_page.dart';
 import 'package:mentor_app/screen/main_screen/news_page/news_page.dart';
 import 'package:mentor_app/screen/main_screen/noti_page/noti_page.dart';
@@ -20,7 +20,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 2;
 
-  final pages = [
+  final pages = const [
     CalendarPage(),
     NewsPage(),
     HomePage(),
@@ -30,19 +30,22 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, ChatScreen.routeName);
+        },
+        child: Icon(Icons.message_outlined),
+      ),
       body: SafeArea(
         child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        // unselectedItemColor: textGrey1,
-        // selectedItemColor: textWhite,
         selectedIconTheme: IconThemeData(
           color: textBlue1,
         ),
         type: BottomNavigationBarType.fixed,
-        // backgroundColor: bgAppbar,
-        selectedLabelStyle: PrimaryFont.regular400(11, textWhite),
-        unselectedLabelStyle: PrimaryFont.regular400(11, textGrey1),
+        selectedLabelStyle: Theme.of(context).textTheme.subtitle1,
+        unselectedLabelStyle: Theme.of(context).textTheme.subtitle1,
         currentIndex: _currentIndex,
         onTap: (newIndex) {
           setState(() {

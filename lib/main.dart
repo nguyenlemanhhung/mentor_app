@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor_app/routes.dart';
+import 'package:mentor_app/screen/main_screen/main_screen.dart';
 import 'package:mentor_app/screen/splash_screen/splash_screen.dart';
 import 'package:mentor_app/themes/app_theme.dart';
 import 'routes.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      initialRoute: SplashScreen.routeName,
+      initialRoute: MainScreen.routeName,
       routes: routes,
     );
   }

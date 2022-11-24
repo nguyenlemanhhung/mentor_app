@@ -5,7 +5,7 @@ import 'package:mentor_app/components/icon_button_outline.dart';
 import 'package:mentor_app/components/line_separating_components.dart';
 import 'package:mentor_app/constants/colors.dart';
 
-import 'package:mentor_app/model/mentor_data.dart';
+import 'package:mentor_app/models/mentor_data.dart';
 import 'package:mentor_app/screen/main_screen/details_mentor/components/header_details_page.dart';
 import 'package:mentor_app/screen/main_screen/details_mentor/components/tabs_detail_mentor.dart';
 

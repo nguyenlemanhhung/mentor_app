@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentor_app/constants/colors.dart';
 import 'package:mentor_app/constants/font.dart';
-import 'package:mentor_app/model/mentor_data.dart';
+import 'package:mentor_app/models/mentor_data.dart';
 
 class HeaderDetailsPage extends StatelessWidget {
   const HeaderDetailsPage({
